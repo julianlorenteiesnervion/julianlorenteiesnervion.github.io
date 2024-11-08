@@ -1,0 +1,32 @@
+#div1 {
+    width: 200px;
+    height: 200px;
+    border: 3px solid red;
+    background-image: url('/img/house.png');
+    /* Pongo el tamaño de la imagen a 100px ya que a 50px
+    queda muy pequeño y no se llega a parecer del todo a la
+    imagen que solicita el ejercicio */
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#div2 {
+    width: 200px;
+    height: 200px;
+    border: 2px solid blue;
+    background-image: url('/img/house.png');
+    background-size: 100px;
+    background-position: bottom left;
+    background-repeat: repeat-x;
+}
+
+#div3 {
+    width: 200px;
+    height: 200px;
+    border: 1px solid green;
+    background-image: url('/img/house.png');
+    background-size: 100px;
+    background-position: right top;
+    background-repeat: repeat-y;
+}
