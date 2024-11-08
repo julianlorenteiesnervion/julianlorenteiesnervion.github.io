@@ -43,12 +43,18 @@ a:hover {
 }
 
 .paginas_ejercicios a {
+    /* También hay que poner la transición aquí
+    para que haya transición cuando el ratón se quite
+    de encima del botón */
+    transition: 0.3s;
     font-size: 2em;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.281);
     border-radius: 2em;
     display: block;
-    margin-bottom: 0.5em;
+    margin: 0.5em;
+    margin-left: 2em;
+    margin-right: 3em;
 }
 
 .paginas_ejercicios a:hover {
