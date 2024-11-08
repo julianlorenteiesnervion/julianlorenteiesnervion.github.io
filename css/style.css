@@ -1,0 +1,56 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(red, blue) no-repeat;
+    color: white;
+    /* Hacer que el fondo ocupe toda la página */
+    min-height: 100vh;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    transition: 0.3s;
+    color: rgb(187, 147, 255);
+}
+
+#bienvenida {
+    text-align: center;
+    background-color: black;
+    border-radius: 2em;
+}
+
+.contenedor_unidades {
+    display: flex;
+    gap: 0.7em;
+}
+
+.bloque_unidad {
+    width: 10em;
+    background-color: black;
+    border-radius: 1em;
+    text-align: center;
+}
+
+.unidad {
+    color: black;
+    background-color: white;
+    border-radius: 1em;
+    margin: 0;
+}
+
+.paginas_ejercicios a {
+    font-size: 2em;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.281);
+    border-radius: 2em;
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.paginas_ejercicios a:hover {
+    transition: 0.3s;
+    font-size: 2.5em;
+}
