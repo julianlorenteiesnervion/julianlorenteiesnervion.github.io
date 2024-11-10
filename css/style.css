@@ -4,6 +4,7 @@ body {
     color: white;
     /* Hacer que el fondo ocupe toda la página */
     min-height: 100vh;
+    margin: 0;
 }
 
 a {
@@ -19,20 +20,46 @@ a:hover {
 #bienvenida {
     text-align: center;
     background-color: black;
-    border-radius: 2em;
+    border-radius: 0em 0em 2em 2em;
+}
+
+#bienvenida h1 {
+    margin: 0;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons p {
+    margin: 1em;
+}
+
+#recent {
+    margin-left: 0.3em;
+    text-align: center;
 }
 
 .contenedor_unidades {
     display: flex;
     gap: 0.7em;
+    margin: 0.5em;
+    justify-content: center;
 }
 
 .bloque_unidad {
+    transition: 0.3s;
     width: 10em;
     background-color: black;
     border-radius: 1em;
     text-align: center;
     box-shadow: 0.2em 0.2em 0.7em black;
+}
+
+.bloque_unidad:hover {
+    width: 11em;
+    transition: 0.3s;
 }
 
 .unidad {
