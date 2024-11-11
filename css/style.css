@@ -43,14 +43,14 @@ a:hover {
 
 .contenedor_unidades {
     display: flex;
-    gap: 0.7em;
-    margin: 0.5em;
     justify-content: center;
 }
 
 .bloque_unidad {
+    margin: 1em;
     transition: 0.3s;
     width: 10em;
+    height: 10em;
     background-color: black;
     border-radius: 1em;
     text-align: center;
@@ -58,7 +58,9 @@ a:hover {
 }
 
 .bloque_unidad:hover {
+    margin: 0.5em;
     width: 11em;
+    height: 11em;
     transition: 0.3s;
 }
 
