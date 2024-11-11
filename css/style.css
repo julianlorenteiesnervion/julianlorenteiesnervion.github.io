@@ -48,7 +48,7 @@ a:hover {
 
 .bloque_unidad {
     margin: 1em;
-    transition: 0.3s;
+    transition: 0.2s ease-out;
     width: 10em;
     height: 10em;
     background-color: black;
@@ -61,7 +61,7 @@ a:hover {
     margin: 0.5em;
     width: 11em;
     height: 11em;
-    transition: 0.3s;
+    transition: 0.2s ease-out;
 }
 
 .unidad {
