@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio con tablas</title>
+    <style>
+        #t1 {
+            width: 50%;
+            display: table;
+            margin: auto;
+        }
+
+        #t1 td {
+            padding: 10px;
+        }
+
+        #tabla_div {
+            margin: 2em;
+        }
+
+        .fila {
+            justify-content: center;
+            display: flex;
+        }
+
+        .celda {
+            width: 5.5em;
+            border: 1px solid;
+        }
+
+        .celda p {
+            padding: 0.3em;
+        }
+    </style>
+</head>
+<body>
+    <p><a href="../index.html">< Volver</a></p>
+    <table id="t1" border="1">
+        <tr>
+            <td>Tutoriales En Linea 1</td>
+            <td>Tutoriales En Linea 2</td>
+            <td>Tutoriales En Linea 3</td>
+        </tr>
+        <tr>
+            <td>Tutoriales En Linea 1</td>
+            <td>Tutoriales En Linea 2</td>
+            <td>Tutoriales En Linea 3</td>
+        </tr>
+    </table>
+
+    <div id="tabla_div">
+        <div class="fila">
+            <div class="celda">
+                <p>Tutoriales En Linea 1</p>
+            </div>
+            <div class="celda">
+                <p>Tutoriales En Linea 2</p>
+            </div>
+            <div class="celda">
+                <p>Tutoriales En Linea 3</p>
+            </div>
+        </div>
+        <div class="fila">
+            <div class="celda">
+                <p>Tutoriales En Linea 1</p>
+            </div>
+            <div class="celda">
+                <p>Tutoriales En Linea 2</p>
+            </div>
+            <div class="celda">
+                <p>Tutoriales En Linea 3</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
