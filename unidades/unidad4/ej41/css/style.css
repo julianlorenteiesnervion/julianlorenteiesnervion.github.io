@@ -23,11 +23,13 @@
     border: 0.1em solid black;
 }
 
+#contenedores {
+    display: flex;
+}
+
 #buscadores, #redes_sociales, #noticias {
     width: 20em;
     border-radius: 1em;
-    align-content: center;
-    margin: 0.5em;
 }
 
 #buscadores {
@@ -40,6 +42,14 @@
 
 #noticias {
     background-color: rgb(206, 140, 206);
+}
+
+#buscadores .bloques_pequenos {
+    display: inline-flex;
+}
+
+#noticias .bloques_pequenos {
+    display: inline-flex;
 }
 
 .bloques_pequenos {

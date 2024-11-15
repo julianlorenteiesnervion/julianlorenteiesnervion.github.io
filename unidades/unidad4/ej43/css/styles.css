@@ -34,17 +34,24 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-shadow: 0.3em 0.3em 1em;
 }
 
 #contenido h2 {
     font-size: 200%;
 }
 
-#contenido p {
+#foto_perfil {
+    width: 5em;
+    border-radius: 50%;
+}
+
+#contenido_sobremi {
     font-size: 130%;
     background-color: white;
     border-radius: 0.5em;
     padding: 1em;
+    box-shadow: 0.3em 0.3em 1em;
 }
 
 footer {
@@ -69,5 +76,10 @@ footer p {
 }
 
 #imagenes img {
-    width: 10%;
+    width: 5em;
+}
+
+form button, input, textarea {
+    border-radius: 1em;
+    border: 0.1em solid rgba(0, 0, 0, 0.292);
 }
