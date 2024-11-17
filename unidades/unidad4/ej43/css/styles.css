@@ -79,12 +79,35 @@ footer p {
     width: 5em;
 }
 
-form label {
-    font-size: 2em;
+form {
+    text-align: center;
+}
+
+.campos {
+    width: 50%;
+    margin: 0.4em;
 }
 
 form button, input, textarea {
-    border-radius: 1em;
+    border-radius: 0.5em;
     border: 0.1em solid rgba(0, 0, 0, 0.292);
     font-size: 1.5em;
+}
+
+#enviar a, #borrar a {
+    text-decoration: none;
+    color: white;
+}
+
+#enviar:hover, #borrar:hover {
+    transition: 0.3s;
+    opacity: 0.5;
+}
+
+#enviar {
+    background-color: #007bff;
+}
+
+#borrar {
+    background-color: red;
 }
