@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Ejercicio 1 - Formulario de Comidas</title>
+</head>
+<body>
+    <p><a href="../../bootstrap44.html">< Volver</a></p>
+    <form style="margin: 1%;">
+        <fieldset class="form-group">
+            <label for="nombre">Nombre</label>
+            <input name="nombre" type="text" class="form-control" placeholder="Introduce tu nombre">
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="correo">Correo</label>
+            <input name="correo" type="email" class="form-control" placeholder="correo@hola123.es">
+        </fieldset>
+
+        <fieldset class="form-group">
+            <legend>Momento para comer</legend>
+            <div class="form-check">
+                <input name="momento" type="checkbox" value="desayuno" class="form-check-input" id="desayuno">
+                <label class="form-check-label" for="desayuno">Desayuno</label>
+            </div>
+            <div class="form-check">
+                <input name="momento" type="checkbox" value="almuerzo" class="form-check-input" id="almuerzo">
+                <label class="form-check-label" for="almuerzo">Almuerzo</label>
+            </div>
+            <div class="form-check">
+                <input name="momento" type="checkbox" value="merienda" class="form-check-input" id="merienda">
+                <label class="form-check-label" for="merienda">Merienda</label>
+            </div>
+            <div class="form-check">
+                <input name="momento" type="checkbox" value="cena" class="form-check-input" id="cena">
+                <label class="form-check-label" for="cena">Cena</label>
+            </div>
+            <div class="form-check">
+                <input name="momento" type="checkbox" value="postre" class="form-check-input" id="postre">
+                <label class="form-check-label" for="postre">Postre</label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="ingredientes">Ingredientes</label>
+            <select name="ingredientes" multiple class="form-control">
+                <optgroup label="Carne">
+                    <option value="vaca">Vaca</option>
+                    <option value="cerdo">Cerdo</option>
+                    <option value="cordero">Cordero</option>
+                </optgroup>
+                <optgroup label="Pescado">
+                    <option value="sardina">Sardina</option>
+                    <option value="pez_espada">Pez Espada</option>
+                    <option value="bacalao">Bacalao</option>
+                </optgroup>
+                <optgroup label="Verdura">
+                    <option value="pimiento">Pimiento</option>
+                    <option value="tomate">Tomate</option>
+                    <option value="lechuga">Lechuga</option>
+                </optgroup>
+                <optgroup label="Fruta">
+                    <option value="manzana">Manzana</option>
+                    <option value="pera">Pera</option>
+                    <option value="platano">Plátano</option>
+                </optgroup>
+            </select>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <legend>Horas</legend>
+            <div class="form-check form-check-inline">
+                <input name="horas" type="radio" value="hora0" class="form-check-input" id="hora0">
+                <label class="form-check-label" for="hora0">0h</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input name="horas" type="radio" value="hora1" class="form-check-input" id="hora1">
+                <label class="form-check-label" for="hora1">1h</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input name="horas" type="radio" value="hora2" class="form-check-input" id="hora2">
+                <label class="form-check-label" for="hora2">2h</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input name="horas" type="radio" value="hora3" class="form-check-input" id="hora3">
+                <label class="form-check-label" for="hora3">3h</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input name="horas" type="radio" value="hora4" class="form-check-input" id="hora4">
+                <label class="form-check-label" for="hora4">4h</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input name="horas" type="radio" value="hora5" class="form-check-input" id="hora5">
+                <label class="form-check-label" for="hora5">5h</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input name="horas" type="radio" value="hora6" class="form-check-input" id="hora6">
+                <label class="form-check-label" for="hora6">6h</label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <legend>Minutos</legend>
+            <div class="form-check form-check-inline">
+                <input name="minutos" type="radio" value="min0" class="form-check-input" id="min0">
+                <label class="form-check-label" for="min0">0m</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input name="minutos" type="radio" value="min15" class="form-check-input" id="min15">
+                <label class="form-check-label" for="min15">15m</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input name="minutos" type="radio" value="min30" class="form-check-input" id="min30">
+                <label class="form-check-label" for="min30">30m</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input name="minutos" type="radio" value="min45" class="form-check-input" id="min45">
+                <label class="form-check-label" for="min45">45m</label>
+            </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="reset" class="btn btn-secondary">Reiniciar</button>
+    </form>
+
+    <!-- JavaScript Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
