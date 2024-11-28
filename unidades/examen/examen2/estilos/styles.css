@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+    font-size: 20px;
+}
+
+header {
+    background-color: black;
+    margin: 0;
+    border-radius: 0em 0em 1em 0em;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+header a {
+    transition: 0.3s;
+    color: white;
+    text-decoration: none;
+    margin: 1em;
+    padding: 0.5em;
+}
+
+header a:hover {
+    transition: 0.3s;
+    background-color: rgba(255, 255, 255, 0.37);
+    border-radius: 1em;
+}
+
+.bloques_caracteristicas {
+    background-color: rgb(153, 223, 255);
+    border-radius: 0.5em;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 1em;
+    padding: 1em;
+    transition: 0.3s;
+}
+
+.bloques_caracteristicas:hover {
+    transition: 0.3s;
+    font-size: 110%;
+}
+
+.bloques_caracteristicas h3 {
+    text-align: center;
+}
+
+#img_s24 {
+    width: 400px;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1em;
+}
+
+.botones button {
+    font-size: 1.5em;
+    transition: 0.3s;
+    color: white;
+    text-align: center;
+    border: 0;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    box-shadow: 0.2em 0.2em 0.5em black;
+}
+
+#boton_compra {
+    background-color: rgb(0, 89, 255);
+}
+
+#boton_compra:hover {
+    transition: 0.3s;
+    font-size: 1.7em;
+    background-color: rgb(104, 255, 104);
+}
+
+#boton_carrito {
+    background-color: orange;
+}
+
+#boton_carrito:hover {
+    transition: 0.3s;
+    font-size: 1.7em;
+    background-color: rgb(225, 104, 255);
+}
+
+footer {
+    background-color: #333;
+    border-radius: 1em 1em 0 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    padding: 0.5em;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
