@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <button onclick="solicitud()">Obtener información</button>
+</body>
+<script>
+    function solicitud() {
+    $.get("https://thesportsdb.com/api/v1/json/3/searchteams.php?t=Chelsea")
+        .done(function(data) {
+            console.log(data);
+        })
+        .fail(function(xhr, status, error) {
+            console.log(`Error: ${xhr.status} - ${error}`);
+        });
+    }
+</script>
+</html>
