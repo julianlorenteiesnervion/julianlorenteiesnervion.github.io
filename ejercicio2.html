@@ -10,14 +10,18 @@
     <button onclick="solicitud()">Obtener información</button>
 </body>
 <script>
-    function solicitud() {
-    $.get("https://thesportsdb.com/api/v1/json/3/searchteams.php?t=Chelsea")
-        .done(function(data) {
-            console.log(data);
-        })
-        .fail(function(xhr, status, error) {
-            console.log(`Error: ${xhr.status} - ${error}`);
-        });
+    function solicitud() { 
+    $.ajax({ 
+    url: "https://thesportsdb.com/api/v1/json/3/searchteams.php?t=Chelsea", 
+    method: "GET", 
+    dataType: "json", // Convierte la respuesta a objeto JSON 
+    success: function(data) { //200 o 201
+    console.log(data); 
+    }, 
+    error: function(xhr, status, error) { 
+    console.log(`Error: ${xhr.status} - ${error}`); 
+    } 
+    });
     }
 </script>
 </html>
