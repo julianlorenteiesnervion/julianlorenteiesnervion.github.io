@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Trileros 🎰</title>
+    <!-- Importamos jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Título y nombre -->
+    <header>
+        <h1 class="titulos">Los Trileros 🎰</h1>
+        <h2 class="titulos">Julián Lorente Marroco</h2>
+    </header>
+
+    <!-- Campos para introducir los datos -->
+    <form>
+        <input type="text" placeholder="Nombre..." id="#nombre" required><br>
+        <input type="text" placeholder="Apellidos..." id="#apellidos" required><br>
+        <input type="password" placeholder="Contraseña..." id="#contrasena" required><br>
+        <input type="number" placeholder="Apuesta..." id="#apuesta" required><br>
+        <input type="number" placeholder="Nº Vasos..." id="#vasos" required><br>
+        <input type="text" placeholder="Escribe TRUCO" id="#truco" required>
+        <button onclick="envio()" type="button">Enviar</button> <!-- Botón de envío -->
+    </form>
+
+    <!-- Información -->
+     <h1 id="num_vasos"></h1>
+
+    <!-- Lista de ganadores -->
+    <h2 style="color: white; text-align: center;">Ganadores</h2>
+    <ol id="ganadores"></ol>
+</body>
+<script>
+    function envio() {
+    let truco = $("#truco").val();
+
+    // Debe escribir TRUCO (prueba)
+    if (truco == "TRUCO") {
+        console.log("Ha escrito TRUCO");
+    }
+
+    // Recogemos la información en un objeto y la guardamos en sus atributos
+    let data =  {
+        nombre: $("#nombre").val(),
+        apellidos: $("#apellidos").val(),
+        password: $("#contrasena").val(),
+        apuesta: $("#apuesta").val(),
+        numero_vasos: $("#vasos").val()
+    };
+
+    // Realizamos un envío con AJAX
+    $.ajax({
+        url: "https://lm.iesnervion.es/vasos.php",
+        method: "POST",
+        data: JSON.stringify(data),
+        contentType: "application/json", // Especifica el tipo de contenido
+        dataType: "json", // La respuesta será interpretada como JSON
+        success: function(response) {
+            // Mostramos por consola la información que nos devuelve el servidor
+            console.log(response);
+
+            // Llamamos a la función mostrarGanadores para mostrar los ganadores
+            mostrarGanadores(response);
+        },
+        error: function(xhr, status, error) {
+            // En caso de error, mostramos el error
+            console.log(`Error: ${xhr.status} - ${error}`);
+        }
+    });
+    }
+
+    function mostrarGanadores(response) {
+        let ganadores = $("#ganadores");
+
+        // Dejamos vacía la lista de ganadores
+        ganadores.empty();
+
+        // Mostramos los ganadores con un append en una lista ordenada
+        ganadores.append("<ol>");
+        
+        for (let i = 0; i < response.lista.length; i++) {
+            ganadores.append("<li>" + response.lista[i].nombre + "</li>");
+        }
+
+        ganadores.append("</ol>");
+    }
+</script>
+</html>
