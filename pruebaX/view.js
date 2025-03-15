@@ -12,7 +12,7 @@ function mostrarPost(Post) {
         <div class="post_user">
             <img src="` + randomImageUrl + `" class="profile_picture">
             <h3 class="user_name">` + Post.getUser() + `</h3>
-            <h3 class="user_id">@` + Post.getUser() + `</h3>
+            <h3 class="user_id">@` + Post.getUser().toLowerCase() + `</h3>
             <h3 class="post_time">· Hace ` + Post.getTime() + ` horas</h3>
         </div>
         <div class="post_info">
@@ -24,7 +24,7 @@ function mostrarPost(Post) {
             <h4 id="retweets">♻️ ` + retweets + `</h4>
             <h4 id="likes">♥️ ` + likes + `</h4>
             <h4 id="views">👁️ ` + views + ` mil</h4>
-            <h4 id="save">🔖</h4>
+            <h4 id="share">🔗</h4>
         </div>
     </div>`;
 }
