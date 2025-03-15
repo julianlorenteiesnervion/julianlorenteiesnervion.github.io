@@ -4,4 +4,16 @@ class Post {
         this.time = time;
         this.message = message;
     }
+
+    getUser() {
+        return this.user;
+    }
+
+    getTime() {
+        return this.time;
+    }
+
+    getMessage() {
+        return this.message;
+    }
 }
