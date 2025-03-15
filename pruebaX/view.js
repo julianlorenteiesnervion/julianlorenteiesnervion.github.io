@@ -1,5 +1,9 @@
 function mostrarPost(Post) {
     let posts = document.getElementById("posts");
+    let comments = parseInt(Math.random() * 100);
+    let retweets = parseInt(Math.random() * 100);
+    let likes = parseInt(Math.random() * 10000);
+    let views = parseInt(Math.random() * 100);
 
     posts.innerHTML += `<div class="post">
         <div class="post_user">
@@ -13,10 +17,10 @@ function mostrarPost(Post) {
             <img src="https://t3.ftcdn.net/jpg/09/03/91/64/360_F_903916468_L5Oli1cL45LG0I58JTVPbNv23khMK5y9.jpg" class="post_media">
         </div>
         <div class="post_bar">
-            <h4 id="comments">🗨️ 20</h4>
-            <h4 id="retweets">♻️ 47</h4>
-            <h4 id="likes">♥️ 307</h4>
-            <h4 id="views">👁️ 20.000</h4>
+            <h4 id="comments">🗨️ ` + comments + `</h4>
+            <h4 id="retweets">♻️ ` + retweets + `</h4>
+            <h4 id="likes">♥️ ` + likes + `</h4>
+            <h4 id="views">👁️ ` + views + ` mil</h4>
             <h4 id="save">🔖</h4>
         </div>
     </div>`;
