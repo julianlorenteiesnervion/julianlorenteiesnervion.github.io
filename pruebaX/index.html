@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h3>X</h3>
+    </header>
+
+    <input type="text" placeholder="Usuario..." id="usuario">
+    <input type="text" placeholder="Mensaje del post..." id="mensaje">
+    <button id="subir" onclick="publicarPost(document.getElementById('usuario').value, 2, document.getElementById('mensaje').value)">Subir</button>
+
+    <div id="posts">
+    </div>
+
+    <!-- ¿Por qué hay que importar los demás? -->
+    <script src="controller.js"></script>
+    <script src="post.js"></script>
+    <script src="model.js"></script>
+    <script src="view.js"></script>
+</body>
+</html>

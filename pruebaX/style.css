@@ -1,0 +1,50 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+header {
+    text-align: center;
+}
+
+#posts {
+    width: 1000px;
+}
+
+.post {
+    margin: 30px;
+}
+
+.post_user {
+    display: flex;
+}
+
+.user_name, .user_id, .post_time {
+    margin: 0;
+    padding-left: 10px;
+}
+
+.user_id, .post_time {
+    color: gray;
+}
+
+.profile_picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.post_text {
+    margin: 10px;
+}
+
+.post_media {
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.post_bar {
+    display: flex;
+    justify-content: space-around;
+}
