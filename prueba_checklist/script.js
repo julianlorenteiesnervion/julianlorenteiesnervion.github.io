@@ -4,7 +4,11 @@ let id = 1;
 
     function addTask() {
         let tarea = document.getElementById('entrada').value;
-        tareas.innerHTML += "<div id=\"tarea" + id + "\"><p>" + tarea + "</p>" + "<button onclick='removeTask(\"tarea" +  id + "\")'>✅</button></div>";
+
+        if (tarea != "") {
+            tareas.innerHTML += "<div id=\"tarea" + id + "\"><p>" + tarea + "</p>" + "<button onclick='removeTask(\"tarea" +  id + "\")'>✅</button></div>";
+        }
+
         document.getElementById('entrada').value = "";
         id++;
     }
