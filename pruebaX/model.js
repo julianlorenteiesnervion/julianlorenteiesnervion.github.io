@@ -1,5 +1,11 @@
-function crearPost(user, time, message) {
-    let post = new Post(user, time, message);
+class Model {
+    static list = [];
 
-    return post;
+    static addPost(Post) {
+        this.list.push(Post);
+    }
+
+    static getPostsList() {
+        return this.list;
+    }
 }
