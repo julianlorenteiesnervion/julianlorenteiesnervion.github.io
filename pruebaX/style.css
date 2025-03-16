@@ -6,22 +6,67 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-header {
+#menus {
+    display: flex;
+}
+
+#menu_izq {
+    width: 20%;
+}
+
+#menu_izq li {
+    transition: 0.3s;
+    border-radius: 48px;
+    font-size: 20px;
+    padding: 20px;
     text-align: center;
+    list-style: none;
+}
+
+#menu_ctr {
+    width: 60%;
+}
+
+#for_you {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#menu_drc {
+    width: 20%;
 }
 
 .botones {
+    padding: 20px;
+    border-radius: 24px;
+}
+
+.botones:hover, #menu_izq li:hover {
     transition: 0.3s;
-    background-color: rgb(0, 162, 255);
+    background-color: rgba(255, 255, 255, 0.275);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#cuadro_busqueda {
+    transition: 0.3s;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+}
+
+#cuadro_busqueda:hover {
+    transition: 0.3s;
+    box-shadow: 0 0 50px rgb(0, 128, 255);
+}
+
+#boton_buscar {
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    background-color: rgb(0, 128, 255);
     color: white;
-    border-radius: 10px;
 }
 
-.botones:hover {
-    transition: 0.3s;
-    background-color: skyblue;
-}
-
+/* Antiguo CSS */
 #posts {
     width: 1000px;
 }
