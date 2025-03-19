@@ -1,0 +1,1 @@
+He intentado aplicar MVC a la To-do list, pero estuve teniendo problemas. Aún así, hice un ejercicio por mi cuenta en el que simulo la red social de X (Twitter anteriormente) en el que pude aplicar correctamente el MVC. De todas formas, la To-do list sigue en proceso.
