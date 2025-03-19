@@ -1,6 +1,8 @@
 function mostrarPosts() {
     let posts = document.getElementById("posts");
 
+    eliminarPosts();
+
     let postsList = Model.getPostsList();
 
     postsList.forEach(post => {
@@ -25,4 +27,9 @@ function mostrarPosts() {
             </div>
         </div>`;
     });
+}
+
+function eliminarPosts() {
+    let post = document.getElementById("posts");
+    post.innerHTML = "";
 }
