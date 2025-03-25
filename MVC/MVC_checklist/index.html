@@ -11,7 +11,7 @@
     <input type="text" id="input_tarea" placeholder="Descripción">
     <button id="boton_agregar" onclick="controller.agregarTarea(document.getElementById('input_tarea').value, obtenerFechaActual())">Agregar</button>
 
-    <h3>Lista de tareas</h3>
+    <h3 style="text-align: center;">Lista de tareas</h3>
     <table id="lista" border="1">
     </table>
 
@@ -28,11 +28,6 @@
             const fecha = ahora.toLocaleDateString();
             const hora = ahora.toLocaleTimeString();
             return `${fecha} ${hora}`;
-        }
-
-        // ELIMINAR CUANDO TERMINE LOS ESTILOS
-        for (let i = 0; i < 3; i++) {
-            controller.agregarTarea(`Tarea ${i}`, obtenerFechaActual());
         }
     </script>
 </body>

@@ -4,7 +4,7 @@ class Tarea {
         this.id = id;
         this.descripcion = descripcion;
         this.fecha = fecha;
-        this.estado = true;
+        this.estado = false;
     }
 
     // Getters

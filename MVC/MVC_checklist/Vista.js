@@ -10,7 +10,7 @@ class Vista {
             <td>${tarea.getId()}</td>
             <td>${tarea.getDescripcion()}</td>
             <td>${tarea.getFecha()}</td>
-            <td>${tarea.getEstado()}</td>
+            <td>${tarea.getEstado() ? 'Completada' : 'Sin completar'}</td>
         </tr>
         `
     }

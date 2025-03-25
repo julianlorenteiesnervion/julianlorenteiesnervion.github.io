@@ -1,3 +1,20 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(240, 240, 240);
+}
+
 #lista {
     background-color: rgb(219, 234, 255);
+    border-collapse: collapse;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#lista thead {
+    background-color: rgb(49, 113, 203);
+    color: white;
+}
+
+#lista td, th {
+    padding: 10px;
 }
