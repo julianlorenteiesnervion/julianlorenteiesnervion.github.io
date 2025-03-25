@@ -11,5 +11,9 @@ class Modelo {
     eliminarTarea(id) {
         this.tareas = this.tareas.filter(tarea => tarea.getId() != id);
     }
+
+    getTareas() {
+        return this.tareas;
+    }
     
 }
