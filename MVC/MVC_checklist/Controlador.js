@@ -19,5 +19,4 @@ class Controlador {
         this.vista.renderizarTodasTareas(this.modelo.getTareas());
     }
 
-
 }
