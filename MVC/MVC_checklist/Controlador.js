@@ -19,4 +19,10 @@ class Controlador {
         this.vista.renderizarTodasTareas(this.modelo.getTareas());
     }
 
+    cambiarEstado(id) {
+        const tarea = this.modelo.getTareas().find(tarea => tarea.getId() === id);
+        tarea.setEstado(!tarea.getEstado());
+        this.mostrarTareas();
+    }
+
 }

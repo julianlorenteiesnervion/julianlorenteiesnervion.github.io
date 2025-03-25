@@ -10,7 +10,11 @@ class Vista {
             <td>${tarea.getId()}</td>
             <td>${tarea.getDescripcion()}</td>
             <td>${tarea.getFecha()}</td>
-            <td>${tarea.getEstado() ? 'Completada' : 'Sin completar'}</td>
+            <td>
+                <span onclick='controller.cambiarEstado(${tarea.getId()})'>
+                    ${tarea.getEstado() ? 'Completada' : 'Sin completar'}
+                </span>
+            </td>
         </tr>
         `
     }
