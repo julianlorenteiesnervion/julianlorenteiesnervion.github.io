@@ -15,6 +15,7 @@ class Vista {
                     ${tarea.getEstado() ? 'Completada' : 'Sin completar'}
                 </p>
             </td>
+            <td><button onclick='controller.cambiarEliminado(${tarea.getId()})'>Eliminar</button></td>
         </tr>
         `
     }
@@ -38,7 +39,9 @@ class Vista {
         `;
 
         tareas.forEach(tarea => {
-            this.renderizarTarea(tarea);
+            if (!tarea.getEliminada()) {
+                this.renderizarTarea(tarea);
+            }
         });
     }
 }

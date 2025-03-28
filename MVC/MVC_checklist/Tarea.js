@@ -5,6 +5,7 @@ class Tarea {
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.estado = false;
+        this.eliminada = false;
     }
 
     // Getters
@@ -24,6 +25,10 @@ class Tarea {
         return this.estado;
     }
 
+    getEliminada() {
+        return this.eliminada;
+    }
+
     // Setters
     setDescripcion(descripcion) {
         this.descripcion = descripcion;
@@ -35,6 +40,10 @@ class Tarea {
 
     setEstado(estado) {
         this.estado = estado;
+    }
+
+    setEliminada(eliminada) {
+        this.eliminada = eliminada;
     }
 
 }
