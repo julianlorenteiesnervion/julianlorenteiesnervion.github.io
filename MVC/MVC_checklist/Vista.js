@@ -25,11 +25,14 @@ class Vista {
     }
 
     renderizarTodasTareas(tareas) {
+
+        let tareasRenderizadas = 0;
+
         this.limpiarLista();
 
         this.lista.innerHTML += `
         <thead>
-            <tr>
+            <tr id='cabecera'>
                 <th>ID</th>
                 <th>Descripción</th>
                 <th>Fecha</th>
@@ -41,7 +44,16 @@ class Vista {
         tareas.forEach(tarea => {
             if (!tarea.getEliminada()) {
                 this.renderizarTarea(tarea);
+                tareasRenderizadas++;
             }
         });
+
+        if (tareasRenderizadas === 0) {
+            this.lista.innerHTML += `
+            <tr>
+                <td colspan='4'>No hay tareas para mostrar</td>
+            </tr>
+            `;
+        }
     }
 }
