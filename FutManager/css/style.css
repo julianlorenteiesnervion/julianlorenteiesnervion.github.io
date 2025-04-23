@@ -1,0 +1,642 @@
+/* Estilo general */
+body {
+    font-family: 'Segoe UI', Calibri, sans-serif;
+    margin: 0;
+    background-color: #161616;
+    color: #ffffff;
+}
+
+/* HEADER FIJO */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgb(0, 158, 26);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#titulo {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 1em 2em;
+}
+
+#titulo img {
+    width: 40px;
+    height: 40px;
+}
+
+nav a {
+    display: block;
+    padding: 4% 0;
+    color: black;
+    text-decoration: none;
+}
+
+#menu_izq #botones button:hover {
+    background-color: #009022;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* CONTENIDO DERECHO */
+#menu_drch {
+    margin-left: 15%;
+    padding: 100px 2em 2em;
+}
+
+/* FORMULARIOS */
+#menu_añadir_equipo, #menu_añadir_jugador {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 500px;
+    margin-bottom: 2em;
+}
+
+#menu_añadir_equipo input, #menu_añadir_jugador input {
+    padding: 0.6em;
+    font-size: 1em;
+    border: none;
+    border-radius: 6px;
+    background-color: #292929;
+    color: white;
+    outline: none;
+}
+
+#menu_añadir_equipo input::placeholder, #menu_añadir_jugador input::placeholder {
+    color: #bbb;
+}
+
+#menu_añadir_equipo button, #menu_añadir_jugador button, #listado_filtrado button {
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    background-color: rgb(0, 158, 26);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 100%;
+}
+
+nav a:hover {
+    background-color: #398293;
+}
+
+#titulo h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: white;
+}
+
+/* MENÚ IZQUIERDO FIJO */
+#menu_izq {
+    position: fixed;
+    top: 70px; /* Altura del header */
+    left: 0;
+    width: 15%;
+    height: calc(100vh - 70px);
+    background-color: #0e0e0e;
+    padding-top: 2em;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.4);
+}
+
+#menu_izq #botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+#menu_izq #botones button {
+    width: 80%;
+    padding: 0.8em;
+    font-size: 1em;
+    background: none;
+    color: white;
+    border: 2px solid #00a52f;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+#menu_izq #botones button:hover {
+    background-color: #009022;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* CONTENIDO DERECHO */
+#menu_drch {
+    margin-left: 15%;
+    padding: 100px 2em 2em;
+}
+
+#menu_añadir_jugador select {
+    padding: 0.6em;
+    font-size: 1em;
+    border: none;
+    border-radius: 6px;
+    background-color: #292929;
+    color: white;
+    outline: none;
+    width: 100%;
+}
+
+#menu_añadir_jugador select option {
+    background-color: #292929;
+}
+
+/* FORMULARIOS */
+#menu_añadir_equipo, #menu_añadir_jugador {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 500px;
+    margin-bottom: 2em;
+}
+
+#menu_añadir_equipo input, #menu_añadir_jugador input {
+    padding: 0.6em;
+    font-size: 1em;
+    border: none;
+    border-radius: 6px;
+    background-color: #292929;
+    color: white;
+    outline: none;
+}
+
+#menu_añadir_equipo input::placeholder, #menu_añadir_jugador input::placeholder {
+    color: #bbb;
+}
+
+#menu_añadir_equipo button, #menu_añadir_jugador button, .filtrar {
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    background-color: rgb(0, 158, 26);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+#menu_añadir_equipo button:hover, #menu_añadir_jugador button:hover, .filtrar:hover {
+    background-color: rgb(0, 120, 20);
+    cursor: pointer;
+}
+
+.filtrar {
+    font-size: 0.8em;
+}
+
+/* LISTADO */
+h3 {
+    margin-top: 1em;
+    font-size: 1.5em;
+    color: #00ff55;
+}
+
+#tituloListado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5em;
+    color: #00ff55;
+    margin-top: 1em;
+}
+
+#botonesListado {
+    display: flex;
+    gap: 1em;
+    margin-left: auto;
+}
+
+#botonesListado button {
+    font-size: 0.8em;
+    padding: 0.6em 1.2em;
+    background-color: rgb(0, 158, 26);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+#botonesListado button:hover {
+    background-color: rgb(0, 120, 20);
+    cursor: pointer;
+}
+
+/* LISTA DE JUGADORES */
+ul#lista {
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+}
+
+ul#lista li {
+    position: relative; 
+    padding: 0.8em 8em 0.8em 0.5em; 
+    margin-bottom: 0.8em;
+    background-color: #292929; 
+    border-radius: 1em; 
+}
+
+ul#lista li .nombre {
+    font-size: 1.2em; 
+    font-weight: bold;
+    padding: 0.5em;
+}
+
+ul#lista li .info {
+    font-size: 1em; 
+    color: #d3d3d3;
+    padding: 1em;
+}
+
+/*Botones de eliminar y modificar*/
+ul#lista li .button-group {
+    position: absolute;
+    right: 2em; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    display: flex; 
+    gap: 0.5em; 
+}
+
+ul#lista li button {
+    padding: 0.4em 0.8em;
+    font-size: 1em;
+    border: none;
+    border-radius: 6px;
+    color: white;
+}
+
+ul#lista li button.modificar {
+    background-color: rgb(0, 158, 26); 
+}
+
+ul#lista li button.eliminar {
+    background-color: rgb(255, 69, 58); 
+}
+
+ul#lista li button.eliminar:hover {
+    background-color: rgb(200, 50, 45); 
+}
+
+ul#lista li button.modificar:hover {
+    background-color: rgb(0, 129, 21); 
+}
+
+#menu_añadir_jugador select, 
+#modalFiltro select {
+    padding: 0.6em;
+    font-size: 1em;
+    border: none;
+    border-radius: 6px;
+    background-color: #292929;
+    color: white;
+    outline: none;
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+
+#menu_añadir_jugador select option, 
+#modalFiltro select option {
+    background-color: #292929;
+}
+
+/* Nuevos estilos para el formulario */
+.form-container {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    padding: 2em;
+    margin-bottom: 2em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.form-title {
+    color: #00ff55;
+    margin-top: 0;
+    margin-bottom: 1.5em;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.form-group label {
+    font-size: 0.9em;
+    color: #bbb;
+    font-weight: 500;
+}
+
+.form-input, .form-select {
+    padding: 0.8em;
+    font-size: 1em;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    background-color: #292929;
+    color: white;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus, .form-select:focus {
+    border-color: #00a52f;
+    box-shadow: 0 0 0 2px rgba(0, 165, 47, 0.2);
+}
+
+.form-input::placeholder {
+    color: #666;
+}
+
+.form-submit {
+    width: 100%;
+    padding: 1em;
+    font-size: 1.1em;
+    background-color: #00a52f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.form-submit:hover {
+    background-color: #008a27;
+    transform: translateY(-2px);
+}
+
+.form-submit:active {
+    transform: translateY(0);
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5em;
+}
+
+.list-header h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #00ff55;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 1em;
+}
+
+.filter-btn {
+    padding: 0.6em 1.2em;
+    font-size: 0.9em;
+    background-color: #00a52f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.filter-btn.secondary {
+    background-color: #3a3a3a;
+}
+
+.filter-btn:hover {
+    background-color: #008a27;
+}
+
+.filter-btn.secondary:hover {
+    background-color: #4a4a4a;
+}
+
+/* Iconos */
+.icon-plus::before {
+    content: "+";
+}
+
+.icon-filter::before {
+    content: "⏷";
+}
+
+.icon-clear::before {
+    content: "×";
+}
+
+/* Estilos para el modal de modificación */
+#modalModificarJugador button, #modalFiltro button {
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    background-color: rgb(0, 158, 26);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+    margin-right: 0.5em;
+}
+
+#modalModificarJugador button:hover, #modalFiltro button:hover {
+    background-color: rgb(0, 120, 20);
+    cursor: pointer;
+}
+
+#modalModificarJugador .form-group {
+    margin-bottom: 1em;
+}
+
+#modalModificarJugador .form-select {
+    width: 100%;
+    padding: 0.6em;
+    background-color: #292929;
+    color: white;
+    border: none;
+    border-radius: 6px;
+}
+
+/* Pop-up */
+.notificacion {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    z-index: 9999;
+    opacity: 0.95;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    animation: fadein 0.3s ease-in-out;
+}
+
+.notificacion.exito {
+    background-color: #28a745; /* Verde */
+}
+
+.notificacion.error {
+    background-color: #dc3545; /* Rojo */
+}
+
+@keyframes fadein {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 0.95; transform: translateY(0); }
+}
+
+/* Estadísticas */
+.stats-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5em;
+    margin: 2em 0;
+}
+
+.stat-card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 1.5em;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.stat-value {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #00ff55;
+    margin-bottom: 0.2em;
+}
+
+.stat-label {
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+.stats-section {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 1.5em;
+    margin: 1.5em 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.stats-section h4 {
+    margin-top: 0;
+    margin-bottom: 1em;
+    color: #00ff55;
+}
+
+.highlight-stat {
+    font-size: 1.2em;
+    padding: 0.8em;
+    background-color: #292929;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.position-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8em;
+}
+
+.position-item {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.position-name {
+    width: 120px;
+    font-weight: 500;
+}
+
+.position-bar-container {
+    flex-grow: 1;
+    height: 20px;
+    background-color: #292929;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.position-bar {
+    height: 100%;
+    background-color: #00a52f;
+    transition: width 0.5s ease;
+}
+
+.position-count {
+    width: 40px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.recent-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recent-list li {
+    padding: 0.8em;
+    margin-bottom: 0.5em;
+    background-color: #292929;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.recent-item {
+    font-weight: 500;
+}
+
+.recent-info {
+    color: #bbb;
+    font-size: 0.9em;
+}
+
+/* Carga de la página */
+.loading-message {
+    text-align: center;
+    padding: 2em;
+    font-size: 1.2em;
+    color: #bbb;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}

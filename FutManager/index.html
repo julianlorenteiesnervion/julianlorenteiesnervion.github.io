@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutManager - Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <script src="js/Equipo.js"></script>
+    <script src="js/Jugador.js"></script>
+    <script src="js/ModeloEquipo.js"></script>
+    <script src="js/ModeloJugador.js"></script>
+    <script src="js/Vista.js"></script>
+    <script src="js/Controlador.js"></script>
+</head>
+<body onload="controller.mostrarMenuInicio()">
+    <header>
+        <div id="titulo">
+            <img src="img/favicon.png">
+            <h2>FutManager</h2>
+        </div>
+    </header>
+    <div id="menus">
+        <div id="menu_izq">
+            <div id="botones">
+                <button onclick="controller.mostrarMenuInicio()">Inicio</button>
+                <br>
+                <button onclick="controller.mostrarMenuEquipos()">Equipos</button>
+                <br>
+                <button onclick="controller.mostrarMenuJugadores()">Jugadores</button>
+            </div>
+        </div>
+        <div id="menu_drch">
+            <div class="loading-message">Cargando FutManager...</div>
+        </div>
+    </div>
+
+    <!-- Modal de filtro -->
+    <div id="modalFiltro" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); z-index: 2000;">
+        <div style="background-color:rgb(67, 67, 67); padding:20px; margin:100px auto; width:300px; border-radius:10px; position:relative;">
+            <h3>Filtrar jugadores</h3>
+            <label for="filtroEquipo">Equipo:</label>
+            <select id="filtroEquipo">
+                <option value="">Todos los equipos</option>
+            </select><br><br>
+            <label for="filtroPosicion">Posición:</label>
+            <select id="filtroPosicion">
+                <option value="">Todas las posiciones</option>
+            </select>
+            <br><br>
+            <button onclick="controller.aplicarFiltros()">Aplicar filtros</button>
+            <button onclick="controller.cerrarModalFiltro()">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Modal para modificar jugador -->
+    <div id="modalModificarJugador" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); z-index: 2000;">
+        <div style="background-color:rgb(67, 67, 67); padding:20px; margin:100px auto; width:300px; border-radius:10px; position:relative;">
+            <h3>Modificar Jugador</h3>
+            <div class="form-group">
+                <label for="modificarPosicion">Posición:</label>
+                <select id="modificarPosicion" class="form-select">
+                    <option value="">Seleccione posición</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="modificarEquipo">Equipo:</label>
+                <select id="modificarEquipo" class="form-select">
+                    <option value="">Seleccione equipo</option>
+                </select>
+            </div>
+            <br>
+            <button onclick="controller.guardarCambiosJugador()">Guardar</button>
+            <button onclick="controller.cerrarModalModificar()">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Notificación que aparece al realizar modificaciones -->
+    <div id="notificacion" class="notificacion" style="display: none;"></div>
+
+    <script>
+        const controller = new Controlador();
+
+        // Funciones para abrir y cerrar el modal de filtro
+        function abrirModalFiltro() {
+            document.getElementById('modalFiltro').style.display = 'block';
+        }
+
+        function cerrarModalFiltro() {
+            document.getElementById('modalFiltro').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
