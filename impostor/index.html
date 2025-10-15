@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego del Impostor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f3f3f3;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .pantalla {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .activa {
+      display: flex;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .impostor {
+      color: red;
+      font-weight: bold;
+      font-size: 28px;
+    }
+
+    .palabra {
+      font-size: 28px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Pantalla 1: Selección de jugadores -->
+  <div id="pantalla-inicio" class="pantalla activa">
+    <h2>Juego del impostor</h2>
+    <h1>Selecciona el número de jugadores</h1>
+    <div id="botones-jugadores"></div>
+    <p style="font-style: italic; font-size: 70%;">Julián Lorente</p>
+  </div>
+
+  <!-- Pantalla 2: Mostrar palabra -->
+  <div id="pantalla-juego" class="pantalla">
+    <h2 id="jugador-info"></h2>
+    <div id="contenido"></div>
+    <button id="boton-mostrar">Mostrar</button>
+  </div>
+
+  <!-- Pantalla 3: Fin -->
+  <div id="pantalla-fin" class="pantalla">
+    <h2>¡Todos han visto su palabra!</h2>
+    <p>Ya podéis empezar a jugar 🎭</p>
+    <button onclick="location.reload()">Jugar otra vez</button>
+  </div>
+
+  <script>
+    const palabras = [
+    "gato", "perro", "coche", "montaña", "río", "avión", "playa", "ordenador", "bosque", "mariposa",
+    "libro", "película", "escuela", "ciudad", "familia", "teléfono", "ventana", "llave", "zapato", "camisa",
+    "pan", "queso", "reloj", "puerta", "fuego", "agua", "aire", "tierra", "planta", "flor",
+    "árbol", "sol", "luna", "estrella", "viento", "nube", "trueno", "lluvia", "nieve", "tormenta",
+    "silla", "mesa", "cama", "sofá", "televisor", "cuchillo", "tenedor", "cuchara", "taza", "plato",
+    "botella", "mochila", "maleta", "bolígrafo", "lápiz", "papel", "cuaderno", "pizarra", "ratón", "teclado",
+    "pantalla", "altavoz", "auriculares", "microfono", "cable", "batería", "enchufe", "ventilador", "bombilla", "caja",
+    "camino", "carretera", "puente", "edificio", "torre", "castillo", "iglesia", "mercado", "parque", "plaza",
+    "farmacia", "hospital", "restaurante", "bar", "tienda", "supermercado", "cine", "teatro", "museo", "biblioteca",
+    "piscina", "gimnasio", "estadio", "aeropuerto", "puerto", "fábrica", "granja", "oficina", "banco", "escuela",
+    ];
+
+    const pantallaInicio = document.getElementById("pantalla-inicio");
+    const pantallaJuego = document.getElementById("pantalla-juego");
+    const pantallaFin = document.getElementById("pantalla-fin");
+    const botonesJugadores = document.getElementById("botones-jugadores");
+    const jugadorInfo = document.getElementById("jugador-info");
+    const contenido = document.getElementById("contenido");
+    const botonMostrar = document.getElementById("boton-mostrar");
+
+    let numJugadores = 0;
+    let jugadorActual = 1;
+    let impostor = 0;
+    let palabraSecreta = "";
+
+    // Crear botones 1–6
+    for (let i = 1; i <= 6; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = i;
+      btn.onclick = () => iniciarJuego(i);
+      botonesJugadores.appendChild(btn);
+    }
+
+    function iniciarJuego(n) {
+      numJugadores = n;
+      impostor = Math.floor(Math.random() * n) + 1;
+      palabraSecreta = palabras[Math.floor(Math.random() * palabras.length)];
+
+      pantallaInicio.classList.remove("activa");
+      pantallaJuego.classList.add("activa");
+
+      mostrarPantallaJugador();
+    }
+
+    function mostrarPantallaJugador() {
+      contenido.innerHTML = "";
+      jugadorInfo.textContent = `Jugador ${jugadorActual}`;
+      botonMostrar.textContent = "Mostrar";
+      botonMostrar.onclick = mostrarPalabra;
+    }
+
+    function mostrarPalabra() {
+      if (jugadorActual === impostor) {
+        contenido.innerHTML = `<p class="impostor">IMPOSTOR</p>`;
+      } else {
+        contenido.innerHTML = `<p class="palabra">${palabraSecreta}</p>`;
+      }
+
+      botonMostrar.textContent = "Ocultar";
+      botonMostrar.onclick = ocultarPalabra;
+    }
+
+    function ocultarPalabra() {
+      jugadorActual++;
+      if (jugadorActual > numJugadores) {
+        pantallaJuego.classList.remove("activa");
+        pantallaFin.classList.add("activa");
+      } else {
+        mostrarPantallaJugador();
+      }
+    }
+  </script>
+</body>
+</html>
