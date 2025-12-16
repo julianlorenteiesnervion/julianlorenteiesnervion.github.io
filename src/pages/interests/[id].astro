@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import { interests } from '../../data/interests';
+
+export function getStaticPaths() {
+  return interests.map(interest => ({
+    params: { id: interest.id },
+    props: { interest },
+  }));
+}
+
+const { interest } = Astro.props;
+---
+
+<Layout title={`${interest.title} | Julián Lorente`}>
+    <div class="max-w-4xl mx-auto">
+        <a href="/" class="inline-flex items-center text-blue-400 hover:text-blue-300 mb-8 transition-colors group">
+            <span class="mr-2 group-hover:-translate-x-1 transition-transform">←</span> Back to Portfolio
+        </a>
+
+        <div class="bg-gray-900/50 border border-gray-800 rounded-2xl overflow-hidden backdrop-blur-sm">
+            <div class="relative h-64 md:h-96 w-full overflow-hidden">
+                <Image 
+                    src={interest.image} 
+                    alt={interest.title} 
+                    class="w-full h-full object-cover"
+                    transition:name={`image-${interest.id}`}
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20 to-transparent"></div>
+                
+                <div class="absolute bottom-0 left-0 p-8">
+                    <h1 
+                        class="text-4xl md:text-5xl font-bold text-white mb-2" 
+                        transition:name={`title-${interest.id}`}
+                    >
+                        {interest.title}
+                    </h1>
+                </div>
+            </div>
+
+            <div class="p-8 md:p-12">
+                <div class="prose prose-invert prose-lg max-w-none">
+                    <p class="text-xl text-gray-300 leading-relaxed whitespace-pre-line">
+                        {interest.fullDescription}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

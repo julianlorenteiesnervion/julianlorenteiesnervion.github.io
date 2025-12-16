@@ -1,0 +1,40 @@
+---
+interface Props {
+    title: string;
+    company: string;
+    date: string;
+    location: string;
+    description?: string;
+    link?: string;
+}
+
+const { title, company, date, location, description, link } = Astro.props;
+---
+
+<div class="relative pl-8 border-l-2 border-gray-800 hover:border-blue-500 transition-colors duration-300 mb-10 last:mb-0 group">
+    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-gray-950 border-2 border-gray-600 group-hover:border-blue-500 rounded-full transition-colors duration-300"></div>
+    
+    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+        <h3 class="text-xl font-bold text-white">
+            {link ? (
+                <a href={link} target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors">
+                    {company}
+                </a>
+            ) : (
+                company
+            )}
+        </h3>
+        <span class="text-sm text-gray-400 font-mono">{date}</span>
+    </div>
+    
+    <h4 class="text-lg text-blue-400 mb-1">{title}</h4>
+    <p class="text-sm text-gray-500 mb-3 flex items-center gap-1">
+        <span>📍</span> {location}
+    </p>
+    
+    {description && (
+        <div class="text-gray-300 leading-relaxed text-sm whitespace-pre-line">
+            {description}
+        </div>
+    )}
+</div>

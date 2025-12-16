@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Section from '../components/Section.astro';
+import Card from '../components/Card.astro';
+import ImageCard from '../components/ImageCard.astro';
+import SkillGroup from '../components/SkillGroup.astro';
+import ExperienceItem from '../components/ExperienceItem.astro';
+import ArchitectureSection from '../components/ArchitectureSection.astro';
+import OrbitingSkills from '../components/OrbitingSkills.astro';
+
+import { interests } from '../data/interests';
+
+const skills = {
+  software: [
+    "Python", "Java", "Kotlin", "Jetpack Compose", "React Native", "Expo", 
+    "Angular", "ASP.NET", "MVVM", "MVC", "APIs", "SQL Server", "JDBC", 
+    "MySQL", "Hibernate", "Firebase", "Figma", "Unity", "HTML & CSS", 
+    "JavaScript", "TypeScript", "Odoo", "Tailwind", "Astro", "Bootstrap", "3D Modelling"
+  ],
+  hardware: ["Device repair technician", "Arduino"],
+  networks: ["Network management", "CISCO products"],
+  office: ["Microsoft Excel", "LibreOffice Calc", "Google Spreadsheets", "Microsoft Office", "LibreOffice", "Google Workspace"]
+};
+---
+
+<Layout title="Julián Lorente | Software Developer">
+	<Header 
+		name="Julián Lorente Marroco"
+		title="Software Developer"
+		email="julianlorentefp@gmail.com"
+		linkedin="https://www.linkedin.com/in/juli%C3%A1n-lorente-marroco/"
+		cvLink="/cv.pdf"
+	/>
+
+	<Section title="My Philosophy">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+			<Card
+				title="Automation" 
+				description="I enjoy streamlining processes and building tools that save time and reduce repetitive tasks. Automation is about efficiency and smart workflows."
+				icon="⚙️"
+			/>
+			<Card
+				title="Simplicity" 
+				description="Clean, minimal designs are not only beautiful but also functional. I aim to create solutions that are intuitive and easy to understand."
+				icon="✨"
+			/>
+			<Card
+				title="Smoothness" 
+				description="Smooth interactions make experiences memorable. I focus on creating seamless transitions, animations, and flows for a polished feel."
+				icon="🌊"
+			/>
+		</div>
+	</Section>
+
+	<Section title="Architecture & Principles">
+		<ArchitectureSection />
+	</Section>
+
+	<Section title="Skills">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+			<div>
+				<SkillGroup category="Software Development" skills={skills.software} />
+			</div>
+			<div>
+				<SkillGroup category="Hardware" skills={skills.hardware} />
+				<SkillGroup category="Networks" skills={skills.networks} />
+				<SkillGroup category="Office Tools" skills={skills.office} />
+			</div>
+		</div>
+		
+		<OrbitingSkills />
+	</Section>
+
+	<Section title="Experience">
+		<div class="space-y-8">
+			<ExperienceItem 
+				title="Computer software and multimedia shop manager"
+				company="Tecnican Servicios Informáticos Cantillana SL"
+				date="18/03/2024 – 17/06/2024"
+				location="Seville, Spain"
+				description={`• Carry out repairs, maintenance, and customer service, as well as retail sales and customer relations.
+				• Responsible for maintaining all software related to promotions.
+				• Proposed many ideas about updating the store's website and showed prototypes made with HTML, CSS & JavaScript.`}
+			/>
+			<ExperienceItem 
+				title="IT Technician - Erasmus+"
+				company="Proandi - Consultores Associados, Lda."
+				date="06/06/2023 – 21/06/2023"
+				location="Porto, Portugal"
+				description={`• Maintenance and repairing of computers.
+				• Relations with customers.`}
+			/>
+		</div>
+	</Section>
+
+	<Section title="Education">
+		<div class="space-y-8">
+			<ExperienceItem 
+				title="DAM (Multiplatform Application Development)"
+				company="IES Nervión"
+				date="15/09/2024 – Current"
+				location="Seville, Spain"
+				link="https://www.institutonervion.es/"
+			/>
+			<ExperienceItem 
+				title="SMR (Microcomputer Systems and Networks)"
+				company="IES Axati"
+				date="15/09/2022 – 17/06/2024"
+				location="Seville, Spain"
+				link="https://blogsaverroes.juntadeandalucia.es/iesaxati/"
+			/>
+		</div>
+	</Section>
+
+	<Section title="Languages">
+		<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+			<div class="bg-gray-900 p-4 rounded-lg border border-gray-800 flex justify-between items-center">
+				<span class="font-bold text-white">Spanish</span>
+				<span class="text-blue-400 text-sm font-mono">Native</span>
+			</div>
+			<div class="bg-gray-900 p-4 rounded-lg border border-gray-800 flex justify-between items-center">
+				<span class="font-bold text-white">English</span>
+				<span class="text-blue-400 text-sm font-mono">C1 (Advanced)</span>
+			</div>
+		</div>
+		<p class="mt-4 text-gray-400 text-sm italic">
+			* Open to learning new languages and improving current skills.
+		</p>
+	</Section>
+
+	<Section title="Interests & Personal">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+			{interests.map((interest) => (
+				<ImageCard 
+					id={interest.id}
+					title={interest.title}
+					description={interest.description}
+					image={interest.image}
+				/>
+			))}
+		</div>
+	</Section>
+</Layout>

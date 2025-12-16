@@ -1,0 +1,42 @@
+---
+interface Props {
+    name: string;
+    title: string;
+    email: string;
+    linkedin: string;
+    cvLink?: string;
+}
+
+const { name, title, email, linkedin, cvLink } = Astro.props;
+---
+
+<header class="flex flex-col items-center text-center mb-16 animate-fade-in">
+    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-4 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
+        {name}
+    </h1>
+    <h2 class="text-2xl md:text-3xl text-gray-300 font-medium mb-6">{title}</h2>
+    
+    <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <a href={`mailto:${email}`} class="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-full transition-colors flex items-center gap-2 text-sm font-medium">
+            <span>📧</span> {email}
+        </a>
+        <a href={linkedin} target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-[#0077b5] hover:bg-[#006396] text-white rounded-full transition-colors flex items-center gap-2 text-sm font-medium">
+            <span>LinkedIn</span> Profile
+        </a>
+        {cvLink && (
+            <a href={cvLink} download class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-full transition-colors flex items-center gap-2 text-sm font-medium shadow-lg hover:shadow-green-500/20">
+                <span>📄</span> Download CV
+            </a>
+        )}
+    </div>
+</header>
+
+<style>
+    .animate-fade-in {
+        animation: fadeIn 1s ease-out;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>

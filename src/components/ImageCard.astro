@@ -1,0 +1,48 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+    id: string;
+    title: string;
+    description: string;
+    image: ImageMetadata;
+}
+
+const { id, title, description, image } = Astro.props;
+---
+
+<a href={`/interests/${id}`} class="block h-full group">
+    <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 h-full flex flex-col relative">
+        <div class="relative overflow-hidden h-48">
+            <Image 
+                src={image} 
+                alt={title} 
+                class="w-full h-full object-cover transition duration-700 group-hover:scale-110" 
+                transition:name={`image-${id}`}
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60"></div>
+            
+            <!-- Overlay with "Show more" -->
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-[2px]">
+                <span class="px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    Read more
+                </span>
+            </div>
+        </div>
+
+        <div class="p-6 flex-1 flex flex-col">
+            <h3 
+                class="font-bold text-xl mb-2 text-white group-hover:text-blue-400 transition-colors"
+                transition:name={`title-${id}`}
+            >
+                {title}
+            </h3>
+            <p class="text-gray-400 text-sm leading-relaxed flex-1">{description}</p>
+            
+            <div class="mt-4 flex items-center text-blue-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-x-2 group-hover:translate-x-0 transform">
+                View Details <span class="ml-1">→</span>
+            </div>
+        </div>
+    </div>
+</a>

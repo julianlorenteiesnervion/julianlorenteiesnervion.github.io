@@ -1,0 +1,19 @@
+---
+import SkillBadge from './SkillBadge.astro';
+
+interface Props {
+    category: string;
+    skills: string[];
+}
+
+const { category, skills } = Astro.props;
+---
+
+<div class="mb-6">
+    <h3 class="text-lg font-semibold text-gray-300 mb-3">{category}</h3>
+    <div class="flex flex-wrap gap-2">
+        {skills.map((skill) => (
+            <SkillBadge name={skill} />
+        ))}
+    </div>
+</div>
